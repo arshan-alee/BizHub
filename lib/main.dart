@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:socialwise/whatsnew.dart';
 import 'splash.dart';
 
 void main() {
@@ -11,7 +12,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Splash(),
+      home: WhatsNew(),
     );
   }
 }

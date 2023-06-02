@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:socialwise/whatsnew.dart';
 
 class PreLoginPage extends StatelessWidget {
   const PreLoginPage({super.key});
@@ -66,7 +67,12 @@ class PreLoginPage extends StatelessWidget {
                       width: 300,
                       height: 50,
                       child: ElevatedButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => WhatsNew()));
+                          },
                           style: ElevatedButton.styleFrom(
                             shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(5)),
@@ -93,7 +99,12 @@ class PreLoginPage extends StatelessWidget {
                       width: 300,
                       height: 50,
                       child: ElevatedButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => WhatsNew()));
+                          },
                           style: ElevatedButton.styleFrom(
                             shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(5)),
@@ -120,7 +131,12 @@ class PreLoginPage extends StatelessWidget {
                       width: 300,
                       height: 50,
                       child: ElevatedButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => WhatsNew()));
+                          },
                           style: ElevatedButton.styleFrom(
                             shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(5)),
@@ -149,7 +165,12 @@ class PreLoginPage extends StatelessWidget {
                       width: 300,
                       height: 50,
                       child: ElevatedButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => WhatsNew()));
+                          },
                           style: ElevatedButton.styleFrom(
                             shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(5)),
