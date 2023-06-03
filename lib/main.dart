@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:socialwise/whatsnew.dart';
+// import 'package:socialwise/whatsnew.dart';
 import 'splash.dart';
-import "searchresult.dart";
-import 'feed.dart';
-import 'notifications.dart';
+// import "searchresult.dart";
+// import 'feed.dart';
+// import 'notifications.dart';
 
 void main() {
   runApp(const MyApp());
