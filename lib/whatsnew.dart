@@ -126,19 +126,19 @@ class WhatsNew extends StatelessWidget {
                         child: Text(
                           'Featured Brands',
                           style: TextStyle(
-                            fontSize: 18,
-                            fontWeight: FontWeight.w900,
+                            fontSize: 20,
+                            fontWeight: FontWeight.w800,
                           ),
                         ),
                       ),
                       SizedBox(
-                        height: 130,
+                        height: 140,
                         child: ListView.builder(
                           scrollDirection: Axis.horizontal,
                           itemCount: 4,
                           itemBuilder: (context, index) {
                             return Container(
-                              width: 130,
+                              width: 140,
                               margin: EdgeInsets.only(right: 13.0),
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(8),
@@ -146,7 +146,7 @@ class WhatsNew extends StatelessWidget {
                                 boxShadow: [
                                   BoxShadow(
                                     color: Colors.black.withOpacity(0.1),
-                                    offset: Offset(0, 2),
+                                    offset: Offset(0, 4),
                                     blurRadius: 4,
                                   ),
                                 ],
@@ -164,7 +164,7 @@ class WhatsNew extends StatelessWidget {
                                     'Yt Brands',
                                     style: TextStyle(
                                       fontSize: 14,
-                                      fontWeight: FontWeight.w900,
+                                      fontWeight: FontWeight.w800,
                                     ),
                                   ),
                                   Row(
@@ -174,7 +174,7 @@ class WhatsNew extends StatelessWidget {
                                         '(4.5)',
                                         style: TextStyle(
                                             fontSize: 12,
-                                            fontWeight: FontWeight.w900),
+                                            fontWeight: FontWeight.w800),
                                       ),
                                       SizedBox(width: 4),
                                       Image.asset(
@@ -196,86 +196,235 @@ class WhatsNew extends StatelessWidget {
                         child: Text(
                           'Trending',
                           style: TextStyle(
-                            fontSize: 18,
-                            fontWeight: FontWeight.w900,
+                            fontSize: 20,
+                            fontWeight: FontWeight.w800,
                           ),
                         ),
                       ),
-                      SizedBox(
-                        height: 200,
-                        child: ListView(
-                          scrollDirection: Axis.horizontal,
-                          children: [
-                            Stack(
-                              children: [
-                                Container(
-                                  width: 150,
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(8),
-                                    color: Colors.blue,
-                                  ),
-                                ),
-                                Positioned.fill(
-                                  child: Center(
-                                    child: Text('Trending 1'),
-                                  ),
-                                ),
-                              ],
-                            ),
-                            SizedBox(width: 16),
-                            Stack(
-                              children: [
-                                Container(
-                                  width: 150,
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(8),
-                                    color: Colors.green,
-                                  ),
-                                ),
-                                Positioned.fill(
-                                  child: Center(
-                                    child: Text('Trending 2'),
-                                  ),
-                                ),
-                              ],
-                            ),
-                            SizedBox(width: 16),
-                            Stack(
-                              children: [
-                                Container(
-                                  width: 150,
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(8),
-                                    color: Colors.orange,
-                                  ),
-                                ),
-                                Positioned.fill(
-                                  child: Center(
-                                    child: Text('Trending 3'),
-                                  ),
-                                ),
-                              ],
-                            ),
-                            SizedBox(width: 16),
-                            Stack(
-                              children: [
-                                Container(
-                                  width: 150,
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(8),
-                                    color: Colors.purple,
-                                  ),
-                                ),
-                                Positioned.fill(
-                                  child: Center(
-                                    child: Text('Trending 4'),
-                                  ),
-                                ),
-                              ],
+                      Container(
+                        height: 250,
+                        width: 350,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(8),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.black.withOpacity(0.1),
+                              offset: Offset(0, 4),
+                              blurRadius: 4,
                             ),
                           ],
                         ),
-                      ),
+                        child: Row(
+                          crossAxisAlignment: CrossAxisAlignment.stretch,
+                          children: [
+                            Expanded(
+                              child: Column(
+                                children: [
+                                  Expanded(
+                                    child: Container(
+                                      decoration: BoxDecoration(
+                                        border: Border(
+                                          right: BorderSide(
+                                            color: Color.fromARGB(
+                                                255, 230, 229, 229),
+                                          ),
+                                          bottom: BorderSide(
+                                            color: Color.fromARGB(
+                                                255, 230, 229, 229),
+                                          ),
+                                        ),
+                                      ),
+                                      child: Stack(
+                                        children: [
+                                          Positioned.fill(
+                                            child: Center(
+                                              child: Column(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.center,
+                                                children: [
+                                                  Image.asset(
+                                                    "images/lifestyle.png",
+                                                    height: 50,
+                                                    width: 50,
+                                                  ),
+                                                  SizedBox(
+                                                    height: 5,
+                                                  ),
+                                                  Text('LifeStyle'),
+                                                ],
+                                              ),
+                                            ),
+                                          ),
+                                          Positioned(
+                                            top: 8,
+                                            right: 8,
+                                            child: Image.asset(
+                                              "images/filter-orange.png",
+                                              height: 20,
+                                              width: 20,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                  Expanded(
+                                    child: Container(
+                                      decoration: BoxDecoration(
+                                        border: Border(
+                                          right: BorderSide(
+                                            color: Color.fromARGB(
+                                                255, 230, 229, 229),
+                                          ),
+                                          top: BorderSide(
+                                            color: Color.fromARGB(
+                                                255, 230, 229, 229),
+                                          ),
+                                        ),
+                                      ),
+                                      child: Stack(
+                                        children: [
+                                          Positioned.fill(
+                                            child: Center(
+                                              child: Column(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.center,
+                                                children: [
+                                                  Image.asset(
+                                                    "images/fastfood.png",
+                                                    height: 50,
+                                                    width: 50,
+                                                  ),
+                                                  SizedBox(
+                                                    height: 5,
+                                                  ),
+                                                  Text('Fast Food'),
+                                                ],
+                                              ),
+                                            ),
+                                          ),
+                                          Positioned(
+                                            top: 8,
+                                            right: 8,
+                                            child: Image.asset(
+                                              "images/filter-orange.png",
+                                              height: 20,
+                                              width: 20,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            Expanded(
+                              child: Column(
+                                children: [
+                                  Expanded(
+                                    child: Container(
+                                      decoration: BoxDecoration(
+                                        border: Border(
+                                          left: BorderSide(
+                                            color: Color.fromARGB(
+                                                255, 230, 229, 229),
+                                          ),
+                                          bottom: BorderSide(
+                                            color: Color.fromARGB(
+                                                255, 230, 229, 229),
+                                          ),
+                                        ),
+                                      ),
+                                      child: Stack(
+                                        children: [
+                                          Positioned.fill(
+                                            child: Center(
+                                              child: Column(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.center,
+                                                children: [
+                                                  Image.asset(
+                                                    "images/cafe.png",
+                                                    height: 50,
+                                                    width: 50,
+                                                  ),
+                                                  SizedBox(
+                                                    height: 5,
+                                                  ),
+                                                  Text('Cafe'),
+                                                ],
+                                              ),
+                                            ),
+                                          ),
+                                          Positioned(
+                                            top: 8,
+                                            right: 8,
+                                            child: Image.asset(
+                                              "images/filter-orange.png",
+                                              height: 20,
+                                              width: 20,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                  Expanded(
+                                    child: Container(
+                                      decoration: BoxDecoration(
+                                        border: Border(
+                                          left: BorderSide(
+                                            color: Color.fromARGB(
+                                                255, 230, 229, 229),
+                                          ),
+                                          top: BorderSide(
+                                            color: Color.fromARGB(
+                                                255, 230, 229, 229),
+                                          ),
+                                        ),
+                                      ),
+                                      child: Stack(
+                                        children: [
+                                          Positioned.fill(
+                                            child: Center(
+                                              child: Column(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.center,
+                                                children: [
+                                                  Image.asset(
+                                                    "images/coffee.png",
+                                                    height: 50,
+                                                    width: 50,
+                                                  ),
+                                                  SizedBox(
+                                                    height: 5,
+                                                  ),
+                                                  Text('Coffee Shop'),
+                                                ],
+                                              ),
+                                            ),
+                                          ),
+                                          Positioned(
+                                            top: 8,
+                                            right: 8,
+                                            child: Image.asset(
+                                              "images/filter-orange.png",
+                                              height: 20,
+                                              width: 20,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                      )
                     ],
                   ),
                 ),
