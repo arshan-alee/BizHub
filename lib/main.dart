@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:socialwise/whatsnew.dart';
 import 'splash.dart';
+import "searchresult.dart";
+import 'feed.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,7 +14,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: WhatsNew(),
+      home: Feed(),
     );
   }
 }
