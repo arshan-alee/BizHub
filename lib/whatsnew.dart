@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'notifications.dart';
 
 class WhatsNew extends StatelessWidget {
   @override
@@ -44,7 +45,10 @@ class WhatsNew extends StatelessWidget {
                 width: 24,
                 height: 24,
               ),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => Notifications()));
+              },
             ),
           ],
         ),
