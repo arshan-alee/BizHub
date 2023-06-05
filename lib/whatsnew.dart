@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'notifications.dart';
+import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 
 class WhatsNew extends StatelessWidget {
+  const WhatsNew({super.key});
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -36,7 +38,9 @@ class WhatsNew extends StatelessWidget {
               width: 24,
               height: 24,
             ),
-            onPressed: () {},
+            onPressed: () {
+              ZoomDrawer.of(context)!.toggle();
+            },
           ),
           actions: [
             IconButton(
@@ -120,7 +124,6 @@ class WhatsNew extends StatelessWidget {
                                   ),
                                 ),
                               ),
-                              border: InputBorder.none,
                             ),
                           ),
                         ),

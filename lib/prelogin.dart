@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 import 'package:socialwise/whatsnew.dart';
+import 'package:socialwise/widgets/CustomButton.dart';
 
 class PreLoginPage extends StatelessWidget {
   const PreLoginPage({super.key});
@@ -8,7 +10,7 @@ class PreLoginPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
         theme: ThemeData(
-          textTheme: TextTheme(
+          textTheme: const TextTheme(
             bodyMedium: TextStyle(
               fontFamily: 'NexaBold', // Replace with the desired font family
             ),
@@ -19,7 +21,7 @@ class PreLoginPage extends StatelessWidget {
         ),
         title: 'Login Page',
         home: Scaffold(
-          backgroundColor: Color.fromARGB(255, 255, 236, 214),
+          backgroundColor: const Color.fromARGB(255, 255, 236, 214),
           body: Container(
             decoration: const BoxDecoration(
               image: DecorationImage(
@@ -27,12 +29,12 @@ class PreLoginPage extends StatelessWidget {
             ),
             child: Column(children: [
               Container(
-                padding: EdgeInsets.fromLTRB(0, 50, 0, 20),
+                padding: const EdgeInsets.fromLTRB(0, 50, 0, 20),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     // SizedBox(height: 200,),
-                    SizedBox(
+                    const SizedBox(
                       width: 50,
                     ),
                     Image.asset(
@@ -40,10 +42,10 @@ class PreLoginPage extends StatelessWidget {
                       width: 20.0,
                       height: 20.0,
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 80,
                     ),
-                    Text(
+                    const Text(
                       'Pre Login',
                       style: TextStyle(
                         fontFamily: 'NexaBold',
@@ -62,85 +64,34 @@ class PreLoginPage extends StatelessWidget {
                       width: 200.0,
                       height: 200.0,
                     ),
-                    SizedBox(height: 30),
+                    const SizedBox(height: 30),
+                    const CustomButton(
+                        icon: 'images/email.png',
+                        text: "Sign in with Email",
+                        bgcolor: Colors.white,
+                        txtcolor: Colors.black),
+                    const SizedBox(height: 10),
                     SizedBox(
                       width: 300,
                       height: 50,
                       child: ElevatedButton(
-                          onPressed: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => WhatsNew()));
+                          onPressed: () async {
+                            if (await (GoogleSignIn()).isSignedIn()) {
+                              await (GoogleSignIn()).signOut();
+                            }
+                            final GoogleSignInAccount? googleUser =
+                                await GoogleSignIn().signIn();
+
+                            if (googleUser == null) {
+                              return;
+                            }
+                            print(googleUser.displayName);
+                            print(googleUser.email);
                           },
                           style: ElevatedButton.styleFrom(
                             shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(5)),
-                            backgroundColor: Colors.white,
-                          ),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Image.asset(
-                                "images/email.png",
-                                width: 25,
-                                height: 25,
-                              ),
-                              SizedBox(width: 20),
-                              Text(
-                                'Sign in with Email',
-                                style: TextStyle(color: Colors.black),
-                              ),
-                            ],
-                          )),
-                    ),
-                    SizedBox(height: 10),
-                    SizedBox(
-                      width: 300,
-                      height: 50,
-                      child: ElevatedButton(
-                          onPressed: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => WhatsNew()));
-                          },
-                          style: ElevatedButton.styleFrom(
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(5)),
-                            backgroundColor: Colors.blue,
-                          ),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Image.asset(
-                                "images/facebook.png",
-                                width: 25,
-                                height: 25,
-                              ),
-                              SizedBox(width: 20),
-                              Text(
-                                'Sign in with Facebook',
-                                style: TextStyle(color: Colors.white),
-                              ),
-                            ],
-                          )),
-                    ),
-                    SizedBox(height: 10),
-                    SizedBox(
-                      width: 300,
-                      height: 50,
-                      child: ElevatedButton(
-                          onPressed: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => WhatsNew()));
-                          },
-                          style: ElevatedButton.styleFrom(
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(5)),
-                            backgroundColor: Color(0xFFCE1010),
+                            backgroundColor: const Color(0xFFCE1010),
                           ),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
@@ -150,8 +101,8 @@ class PreLoginPage extends StatelessWidget {
                                 width: 25,
                                 height: 25,
                               ),
-                              SizedBox(width: 20),
-                              Text(
+                              const SizedBox(width: 20),
+                              const Text(
                                 'Sign in with Google',
                                 style: TextStyle(
                                   color: Colors.white,
@@ -160,37 +111,19 @@ class PreLoginPage extends StatelessWidget {
                             ],
                           )),
                     ),
-                    SizedBox(height: 10),
-                    SizedBox(
-                      width: 300,
-                      height: 50,
-                      child: ElevatedButton(
-                          onPressed: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => WhatsNew()));
-                          },
-                          style: ElevatedButton.styleFrom(
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(5)),
-                            backgroundColor: Colors.black,
-                          ),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Image.asset(
-                                "images/apple.png",
-                                width: 25,
-                                height: 25,
-                              ),
-                              SizedBox(width: 20),
-                              Text(
-                                'Sign in with Apple',
-                                style: TextStyle(color: Colors.white),
-                              ),
-                            ],
-                          )),
+                    const SizedBox(height: 10),
+                    const CustomButton(
+                      icon: 'images/facebook.png',
+                      text: "Sign in with Facebook",
+                      bgcolor: Colors.blue,
+                      txtcolor: Colors.white,
+                    ),
+                    const SizedBox(height: 10),
+                    const CustomButton(
+                      icon: 'images/apple.png',
+                      text: "Sign in with Apple",
+                      bgcolor: Colors.black,
+                      txtcolor: Colors.white,
                     ),
                   ],
                 ),

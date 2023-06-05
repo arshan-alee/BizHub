@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 
 class Feed extends StatelessWidget {
   @override
@@ -35,7 +36,9 @@ class Feed extends StatelessWidget {
               width: 24,
               height: 24,
             ),
-            onPressed: () {},
+            onPressed: () {
+              ZoomDrawer.of(context)!.toggle();
+            },
           ),
           actions: [
             IconButton(
