@@ -21,115 +21,116 @@ class PreLoginPage extends StatelessWidget {
         ),
         title: 'Login Page',
         home: Scaffold(
-          backgroundColor: const Color.fromARGB(255, 255, 236, 214),
-          body: Container(
-            decoration: const BoxDecoration(
-              image: DecorationImage(
-                  image: AssetImage("images/bg.png"), fit: BoxFit.cover),
+          extendBodyBehindAppBar: true,
+          appBar: AppBar(
+            backgroundColor: Colors.transparent,
+            elevation: 0.0,
+            title: Text(
+              'What\'s New',
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+                color: Colors.black,
+                fontFamily: 'NexaBold',
+              ),
             ),
-            child: Column(children: [
-              Container(
-                padding: const EdgeInsets.fromLTRB(0, 50, 0, 20),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    // SizedBox(height: 200,),
-                    const SizedBox(
-                      width: 50,
-                    ),
-                    Image.asset(
-                      'images/back.png',
-                      width: 20.0,
-                      height: 20.0,
-                    ),
-                    const SizedBox(
-                      width: 80,
-                    ),
-                    const Text(
-                      'Pre Login',
-                      style: TextStyle(
-                        fontFamily: 'NexaBold',
-                        fontSize: 25,
-                      ),
-                    ),
-                  ],
-                ),
+            centerTitle: true,
+            leading: IconButton(
+              icon: Image.asset(
+                'images/back.png',
+                width: 24,
+                height: 24,
               ),
-              Expanded(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    Image.asset(
-                      'images/logo.png',
-                      width: 200.0,
-                      height: 200.0,
-                    ),
-                    const SizedBox(height: 30),
-                    const CustomButton(
-                        icon: 'images/email.png',
-                        text: "Sign in with Email",
-                        bgcolor: Colors.white,
-                        txtcolor: Colors.black),
-                    const SizedBox(height: 10),
-                    SizedBox(
-                      width: 300,
-                      height: 50,
-                      child: ElevatedButton(
-                          onPressed: () async {
-                            if (await (GoogleSignIn()).isSignedIn()) {
-                              await (GoogleSignIn()).signOut();
-                            }
-                            final GoogleSignInAccount? googleUser =
-                                await GoogleSignIn().signIn();
-
-                            if (googleUser == null) {
-                              return;
-                            }
-                            print(googleUser.displayName);
-                            print(googleUser.email);
-                          },
-                          style: ElevatedButton.styleFrom(
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(5)),
-                            backgroundColor: const Color(0xFFCE1010),
-                          ),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Image.asset(
-                                "images/google.png",
-                                width: 25,
-                                height: 25,
-                              ),
-                              const SizedBox(width: 20),
-                              const Text(
-                                'Sign in with Google',
-                                style: TextStyle(
-                                  color: Colors.white,
-                                ),
-                              ),
-                            ],
-                          )),
-                    ),
-                    const SizedBox(height: 10),
-                    const CustomButton(
-                      icon: 'images/facebook.png',
-                      text: "Sign in with Facebook",
-                      bgcolor: Colors.blue,
-                      txtcolor: Colors.white,
-                    ),
-                    const SizedBox(height: 10),
-                    const CustomButton(
-                      icon: 'images/apple.png',
-                      text: "Sign in with Apple",
-                      bgcolor: Colors.black,
-                      txtcolor: Colors.white,
-                    ),
-                  ],
-                ),
-              ),
-            ]),
+              onPressed: () {},
+            ),
           ),
+          body: Stack(children: [
+            Container(
+              width: double.infinity,
+              height: double.infinity,
+              decoration: const BoxDecoration(
+                image: DecorationImage(
+                    image: AssetImage("images/bg.png"), fit: BoxFit.cover),
+              ),
+            ),
+            Center(
+              child: Expanded(
+                child: SafeArea(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Image.asset(
+                        'images/logo.png',
+                        width: 200.0,
+                        height: 200.0,
+                      ),
+                      const SizedBox(height: 30),
+                      const CustomButton(
+                          icon: 'images/email.png',
+                          text: "Sign in with Email",
+                          bgcolor: Colors.white,
+                          txtcolor: Colors.black),
+                      const SizedBox(height: 10),
+                      SizedBox(
+                        width: 300,
+                        height: 50,
+                        child: ElevatedButton(
+                            onPressed: () async {
+                              if (await (GoogleSignIn()).isSignedIn()) {
+                                await (GoogleSignIn()).signOut();
+                              }
+                              final GoogleSignInAccount? googleUser =
+                                  await GoogleSignIn().signIn();
+
+                              if (googleUser == null) {
+                                return;
+                              }
+                              print(googleUser.displayName);
+                              print(googleUser.email);
+                            },
+                            style: ElevatedButton.styleFrom(
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(5)),
+                              backgroundColor: const Color(0xFFCE1010),
+                            ),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Image.asset(
+                                  "images/google.png",
+                                  width: 25,
+                                  height: 25,
+                                ),
+                                const SizedBox(width: 20),
+                                const Text(
+                                  'Sign in with Google',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                  ),
+                                ),
+                              ],
+                            )),
+                      ),
+                      const SizedBox(height: 10),
+                      const CustomButton(
+                        icon: 'images/facebook.png',
+                        text: "Sign in with Facebook",
+                        bgcolor: Colors.blue,
+                        txtcolor: Colors.white,
+                      ),
+                      const SizedBox(height: 10),
+                      const CustomButton(
+                        icon: 'images/apple.png',
+                        text: "Sign in with Apple",
+                        bgcolor: Colors.black,
+                        txtcolor: Colors.white,
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+          ]),
         ));
   }
 }

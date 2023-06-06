@@ -3,9 +3,14 @@ import 'notifications.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 
 class WhatsNew extends StatelessWidget {
-  const WhatsNew({super.key});
+  const WhatsNew({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    final containerWidth = screenWidth - 60;
+    final containerHeight = (containerWidth) - 30;
+
     return MaterialApp(
       theme: ThemeData(
         textTheme: TextTheme(
@@ -50,8 +55,10 @@ class WhatsNew extends StatelessWidget {
                 height: 24,
               ),
               onPressed: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => Notifications()));
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Notifications()),
+                );
               },
             ),
           ],
@@ -112,7 +119,7 @@ class WhatsNew extends StatelessWidget {
                               suffixIcon: Container(
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(5),
-                                  color: const Color.fromARGB(255, 255, 123, 0),
+                                  color: Color.fromARGB(255, 221, 101, 3),
                                 ),
                                 width: 60,
                                 height: 60,
@@ -180,8 +187,9 @@ class WhatsNew extends StatelessWidget {
                                       Text(
                                         '(4.5)',
                                         style: TextStyle(
-                                            fontSize: 12,
-                                            fontWeight: FontWeight.w800),
+                                          fontSize: 12,
+                                          fontWeight: FontWeight.w800,
+                                        ),
                                       ),
                                       SizedBox(width: 4),
                                       Image.asset(
@@ -209,8 +217,8 @@ class WhatsNew extends StatelessWidget {
                         ),
                       ),
                       Container(
-                        height: 250,
-                        width: 350,
+                        height: containerHeight,
+                        width: containerWidth,
                         decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(8),
@@ -234,11 +242,19 @@ class WhatsNew extends StatelessWidget {
                                         border: Border(
                                           right: BorderSide(
                                             color: Color.fromARGB(
-                                                255, 230, 229, 229),
+                                              255,
+                                              230,
+                                              229,
+                                              229,
+                                            ),
                                           ),
                                           bottom: BorderSide(
                                             color: Color.fromARGB(
-                                                255, 230, 229, 229),
+                                              255,
+                                              230,
+                                              229,
+                                              229,
+                                            ),
                                           ),
                                         ),
                                       ),
@@ -282,11 +298,19 @@ class WhatsNew extends StatelessWidget {
                                         border: Border(
                                           right: BorderSide(
                                             color: Color.fromARGB(
-                                                255, 230, 229, 229),
+                                              255,
+                                              230,
+                                              229,
+                                              229,
+                                            ),
                                           ),
                                           top: BorderSide(
                                             color: Color.fromARGB(
-                                                255, 230, 229, 229),
+                                              255,
+                                              230,
+                                              229,
+                                              229,
+                                            ),
                                           ),
                                         ),
                                       ),
@@ -336,11 +360,19 @@ class WhatsNew extends StatelessWidget {
                                         border: Border(
                                           left: BorderSide(
                                             color: Color.fromARGB(
-                                                255, 230, 229, 229),
+                                              255,
+                                              230,
+                                              229,
+                                              229,
+                                            ),
                                           ),
                                           bottom: BorderSide(
                                             color: Color.fromARGB(
-                                                255, 230, 229, 229),
+                                              255,
+                                              230,
+                                              229,
+                                              229,
+                                            ),
                                           ),
                                         ),
                                       ),
@@ -384,11 +416,19 @@ class WhatsNew extends StatelessWidget {
                                         border: Border(
                                           left: BorderSide(
                                             color: Color.fromARGB(
-                                                255, 230, 229, 229),
+                                              255,
+                                              230,
+                                              229,
+                                              229,
+                                            ),
                                           ),
                                           top: BorderSide(
                                             color: Color.fromARGB(
-                                                255, 230, 229, 229),
+                                              255,
+                                              230,
+                                              229,
+                                              229,
+                                            ),
                                           ),
                                         ),
                                       ),

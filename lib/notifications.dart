@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 class Notifications extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    double containerHeight = MediaQuery.of(context).size.height * 0.19;
     return MaterialApp(
       theme: ThemeData(
         textTheme: TextTheme(
@@ -53,15 +54,15 @@ class Notifications extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(left: 30.0, top: 10),
+              padding: const EdgeInsets.only(left: 20.0, top: 10),
               child: SafeArea(
                 child: SingleChildScrollView(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: List.generate(10, (index) {
                       return Container(
-                        height: 115,
-                        margin: EdgeInsets.fromLTRB(0, 0, 30, 20),
+                        height: containerHeight,
+                        margin: EdgeInsets.fromLTRB(0, 0, 20, 20),
                         padding: EdgeInsets.all(15),
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(8),
